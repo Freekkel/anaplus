@@ -1,0 +1,79 @@
+\documentclass[a4paper,10pt]{scrbook}
+\usepackage{etex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8x]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage{color}
+\usepackage{multicol} 
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{latexsym}
+\usepackage{enumitem}
+\usepackage{pstricks}
+\usepackage{stmaryrd}
+\usepackage{MnSymbol}
+\usepackage{array}
+\usepackage{linearb}
+\usepackage{titlesec}
+\usepackage{longtable}
+\usepackage{hyperref} % als letztes Packet einbinden zwingend notwendig
+
+
+%Subsections werden hiermit nicht in das Inhaltsverzeichnis übernommen
+\setcounter{tocdepth}{1}
+
+
+%Mehr Raum zwischen subsections
+\titlespacing{\section}{0pt}{*4}{*2.5}
+\titlespacing{\subsection}{0pt}{*3.5}{*1.5}
+
+% kleine Anpassungen, damit die Seitenbreite überall außer Titel gleich ist.
+\setcounter{secnumdepth}{2}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{220mm}
+\setlength{\headheight}{3mm}
+\evensidemargin1mm
+\oddsidemargin1mm
+
+%selbstdefinierte Befehle für schnelleres arbeiten
+\newcommand{\tab}{\hspace*{3em}}
+\newcommand{\RM}[1]{\MakeUppercase{\romannumeral #1}}
+\newcommand{\bsp}{\subsection{\underline{Beispiel:}}}
+\newcommand{\defi}{\subsection{\underline{Definition:}}}
+\newcommand{\stz}{\subsection{\underline{Satz:}}}
+\newcommand{\id}{\subsection{\underline{Idee:}}}
+\newcommand{\bws}{\underline{Beweis:\\}}
+
+
+%geänderte befehle um den Tafelanschriften von Herr Leinen näher zu kommen.
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Farbanpassung
+\newrgbcolor{pgreen}{0 1 0}
+\newrgbcolor{pblue}{0 0 1}
+\newrgbcolor{plightgrey}{0.3 0.3 0.3}
+\newrgbcolor{pgrey}{0.6 0.6 0.6}
+\newrgbcolor{pdarkgrey}{0.8 0.8 0.8}
+\newrgbcolor{pred}{1 0 0}
+\newrgbcolor{pviolet}{1 0 1}
+
+
+%Dokumentenanfang mit diversen input von mehreren Einzeldokumenten.
+\begin{document}
+	\input{front/title} 
+	
+	\frontmatter 
+		\input{frontmatter/preface}
+		\input{frontmatter/table_of_contents} 
+	 
+	\mainmatter 
+		\input{mainmatter/chapter_1}
+	 
+	\backmatter 
+		\input{backmatter/listoffigures} 
+\end {document}
