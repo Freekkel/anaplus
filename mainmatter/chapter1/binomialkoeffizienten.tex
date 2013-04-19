@@ -27,6 +27,50 @@ $n!$ ist die Anzahl der Möglichkeiten, $n$ Objekte anzuordnen (in einer Reihe)\
 $n$  & Möglichkeiten für 1. Objekt \\
 $(n-1)\dots$ & Möglichkeiten für 2. Objekt \\
 $(n-2)\dots$ & Möglichkeiten für 3. Objekt\\
- \end{tabular}
+ \end{tabular}$\square$
 
-$\square$
+%
+%
+%
+
+\defi 
+Es sei $\mathop{\underline{n}}\limits^{\mathop{\textrm{Standardmenge}}\limits_{\downarrow}} = \{0,1,\dots,n-1\}$\\ 
+Für $0\leq k \leq n$ sie $\begin{pmatrix} n \\ k \end{pmatrix}$ die Anzahl  aller $k$-elementigen Teilmengen von $\underline{n}$. 
+
+%
+%
+%
+
+\stz
+Für $0\leq k \leq n$ ist $\begin{pmatrix} n \\ k \end{pmatrix} = \frac{n!}{k! \cdot (n-k)!} $ \\
+\bws \\
+Wir basteln eine $k$-elemtige Teilmenge von $\underline{n}$ \\
+\begin{tabular}{cc}
+$n$ & Möglichkeiten für 1. Element der Teilmenge \\
+$n-1$ & Möglichkeiten für 2. Element der Teilmenge  \\
+ \vdots &  \vdots  \\
+$n-k+1$ & Möglichkeiten für k. Element der Teilmenge \\
+\end{tabular}
+\\
+Insgesamt $= n(n-1) \dotsc (n-k+1)=\frac{n!}{(n-k)!}$ Möglichkeiten. Jede $k$-elementige Teilmenge wurde $k!$-mal konstruiert, da die Reihenfolge des gewählten Elemente keine Relevanz hat.\\
+\underline{Fazit:} es gibt $\frac{1}{k!} \cdot \frac{n!}{(n-k)!} \quad k$-elementige Teilmengen in $\underline{n}$
+
+%
+%
+%
+
+\bsp 
+\begin{enumerate}[a) ]
+	\item Anzahl der Partien bei einem Turnier "`jeder gegen jeden"'.\\
+		$\begin{pmatrix} n \\ 2 \end{pmatrix} = \frac{n(n-1)}{1\cdot 2} = \frac{n(n-1)}{2}$
+	\item Anzahl der Tips beim Lotto "'6 aus 49"`\\ 
+		\begin{align}	
+			\begin{pmatrix} 49 \\ 6 \end{pmatrix} &= \frac{49 \cdot \textcolor{pviolet}{48} 
+			\cdot 47 \cdot 46 \cdot \textcolor{pblue}{45} \cdot 44}{1 \cdot 
+			\textcolor{pviolet}{2} \cdot  \textcolor{pblue}{3} \cdot 
+			\textcolor{pviolet}{4} \cdot \textcolor{pblue}{5} \cdot 
+			\textcolor{pviolet}{6}} \\
+			&= 49 \cdot 47 \cdot 46 \cdot 3 \cdot 44 \\
+			&= 13.983.816
+		\end{align}
+\end{enumerate}
