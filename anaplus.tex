@@ -3,8 +3,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8x]{inputenc}
 \usepackage[ngerman]{babel}
-\usepackage{color}
-\usepackage{multicol} 
+\usepackage{color}		%um farben zu definieren
+\usepackage{multicol} %um temporär mehre spalten zu erzeugen
 \usepackage{graphicx}
 \usepackage{amssymb}
 \usepackage{amsmath}
@@ -13,11 +13,12 @@
 \usepackage{pstricks}
 \usepackage{stmaryrd}
 \usepackage{MnSymbol}
-\usepackage{array}
+\usepackage{array} % um schöne Formeln gestalten zu können.
 \usepackage{linearb}
 \usepackage{titlesec}
-\usepackage{longtable}
-\usepackage{enumerate}
+\usepackage{longtable} % für große Tabellen
+\usepackage{enumerate} % für individuelles Weiterählen
+\usepackage{pstricks-add} % Für das Pascalsche Dreieck
 \usepackage{hyperref} % als letztes Packet einbinden zwingend notwendig
 
 
@@ -45,6 +46,8 @@
 \newcommand{\stz}{\subsection{\underline{Satz:}}}
 \newcommand{\id}{\subsection{\underline{Idee:}}}
 \newcommand{\bws}{\underline{Beweis:\\}}
+\newcommand{\n}{$\underline{n}$}	%Standardmenge in text
+\newcommand{\mn}{\underline{n}}	%Standardmenge in Mathe Umgebung
 
 
 %geänderte befehle um den Tafelanschriften von Herr Leinen näher zu kommen.
@@ -62,6 +65,12 @@
 \newrgbcolor{pred}{1 0 0}
 \newrgbcolor{pviolet}{1 0 1}
 
+%Fonts für altdeutsche Buchstaben in Text einfügbar mit \suet{_TEXT_}
+
+\newfont{\suet}{suet14}
+\DeclareTextFontCommand{\textsuet}{\suet}
+
+
 
 %Dokumentenanfang mit diversen input von mehreren Einzeldokumenten.
 \begin{document}
@@ -73,6 +82,7 @@
 	 
 	\mainmatter 
 		\input{mainmatter/chapter_1}
+%		\input{mainmatter/chapter_2}
 	 
 	\backmatter 
 		\input{backmatter/listoffigures} 
