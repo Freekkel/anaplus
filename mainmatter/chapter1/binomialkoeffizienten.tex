@@ -63,7 +63,7 @@ Insgesamt $= n(n-1) \dotsc (n-k+1)=\frac{n!}{(n-k)!}$ Möglichkeiten. Jede $k$-e
 \begin{enumerate}[a) ]
 	\item Anzahl der Partien bei einem Turnier "`jeder gegen jeden"'.\\
 		$\begin{pmatrix} n \\ 2 \end{pmatrix} = \frac{n(n-1)}{1\cdot 2} = \frac{n(n-1)}{2}$
-	\item Anzahl der Tips beim Lotto "'6 aus 49"`\\ 
+	\item Anzahl der Tips beim Lotto "`6 aus 49"'\\ 
 		\begin{align}	
 			\begin{pmatrix} 49 \\ 6 \end{pmatrix} &= \frac{49 \cdot \textcolor{pviolet}{48} 
 			\cdot 47 \cdot 46 \cdot \textcolor{pblue}{45} \cdot 44}{1 \cdot 
@@ -93,7 +93,7 @@ Stets gilt:
 	\item trivial
 	\item Sei $M$ eine $k$-elementige Teilmenge von \n$=\{0,1,\dotsc,n-1\}$
 	\begin{description}
-		\item[\underline{1. Fall} $n-1\in M:$] $M=\{n-1\} \quad \dot{\cup} \quad M_{0}$ $k$-elementige Teilmenge von $\underline{n-1}$\\
+		\item[\underline{1. Fall} $n-1\in M:$] $M=\{n-1\} \quad \dot{\bigcup} \quad M_{0}$ $k$-elementige Teilmenge von $\underline{n-1}$\\
 			$\Rightarrow \begin{pmatrix} n-1 \\ k-1 \end{pmatrix}$ Möglichkeiten für $M_{0}$ bzw. $M$
 		\item[\underline{2. Fall} $n-1 \notin M:$] $\mathop{M}\limits_{\mathop{k\textrm{-elementige Teilmenge}}\limits^{\uparrow}} \subseteq n-1$ \\
 			$\Rightarrow \begin{pmatrix} n-1 \\ k \end{pmatrix}$ Möglichkeiten.
@@ -129,3 +129,12 @@ Stets gilt:
 \end{multicols}
 \normalsize {} % damit wieder alles normalgroß ist
 
+%
+%
+%
+
+\subsection{Binomische Formel}
+Für alle $x,y \in \mathbb{R}$ und $n \in \mathbb{N}$ ist $(x+y)=\sum\limits_{k=0}^{n}\begin{pmatrix} n \\ k \end{pmatrix}x^{k}y^{n-k}$
+\qquad\\
+\bws\\
+$\mathop{\underbrace{(x+y)(x+y)\dotsc(x+y)}}\limits_{n-mal}$ aus multiplizieren liefert viele $x^{k}y^{n-k}$, nämlich so oft wie man $k$ der $^{n}$Klammern wählen kann, um daraus das $x$ zu rekrutieren $\Rightarrow \begin{pmatrix} n \\ k \end{pmatrix}$ Möglichkeiten

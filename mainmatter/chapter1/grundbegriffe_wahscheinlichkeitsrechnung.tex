@@ -1,0 +1,117 @@
+\section{Grundbegriffe der Wahrscheinlichkeitsrechnung}
+
+Viele Vorgänge in unserer Welt können wir nicht präzise auf ihre Ursachen zurückführen - sie erscheinen uns "`zufällig"'. Wir versuchen dennoch dieses Verhalten mathematisch exakt zu beschreiben. 
+%
+%
+%
+\defi 
+Ein Zufallsversuch sei ein Experiment dessen mögliche Ausgänge als \underline{Ergebnisse} bezeichnet werden. Die Menge aller Ergebnisse sei die Ergebnismenge $\Omega$ des Versuchs.
+%
+%
+%
+\bsp
+\begin{description}
+	\item[$\blacktriangleright$] Werfen von zwei Würfeln $\Omega = S \times S$ wobei 
+			$S=\{1,\cdots,6\}$
+	\item[$\blacktriangleright$] Die täglich von 12 Uhr an einer Tafel gemessene Temperatur
+			ist ein Ergebnis aus $\Omega = \mathbb{R}$
+\end{description}
+%
+%
+%
+\defi 
+Jede Teilmenge der Ergebnismenge $\Omega$ bezeichnen wir als ein \underline{Ergebnis}.\\
+Wir sagen: Das Ereignis $A \subseteq \Omega$ \underline{tritt ein}, falls eine Durchführung des Zufallsversuchs ein Ergebnis liefert, das in $A$ liegt. 
+%
+%
+%
+\bsp
+\begin{description}
+	\item[$\blacktriangleright$] Werfen zweier Würfel:\\
+			Pasch =$ \{ (1,1),(2,2),(3,3),\dotsc,(6,6)\} \subseteq \Omega = S \times S$ wie 
+			oben.
+	\item[$\blacktriangleright$] Hörsaaltemperatur: Angenehm = $ [22,24] \subseteq 
+			\mathbb{R}$
+\end{description}
+%
+%
+%
+\defi
+Eine \underline{Ergebnisalgebra} in $\Omega$ sei eine Familie von Ereignissen mit: \begin{description}
+	\item[$\blacktriangleright$] $\Omega \in$ \suet{A}
+	\item[$\blacktriangleright$] \normalfont{Ist }$A\subset$ \suet{A} \normalfont{, so 
+			auch }$\Omega \diagdown A \in$ \suet{A} \normalfont{}
+	\item[$\blacktriangleright$] sind $A_{n} \in $\, \suet{A}\normalfont{} 		
+			$(n\in\mathbb{N})$ so auch 
+			$\mathop{\bigcup}\limits_{n\in\mathbb{N}}A_{n} \in$ \,\suet{A}
+			\normalfont{}
+			
+\end{description}
+
+Eine \underline{Wahrscheinlichkeitsfunktion} sei eine Abbildung $p$\, \suet{A}\normalfont{} $\rightarrow$ [0,1] mit:
+\begin{description}
+	\item[$\blacktriangleright$] $p(\Omega)=1$
+	\item[$\blacktriangleright$] Sind $A_{n} \in$ \suet{A}\normalfont{}
+		$(n\in\mathbb{N})$ mit $A_{n} \cap A_{m} =$ \O
+\end{description}
+
+Wir nennen $(\Omega,p)$ einen \underline{Wahrscheinlichkeitsraum}
+
+%
+%
+%
+
+\bsp 
+\begin{description}
+	\item[$\blacktriangleright$] Ist $\Omega$ endlich, so wähle \suet{A}\normalfont{} = 
+		$\gamma ( \Omega)$= Menge aller Teilmengen von $\Omega$ und 
+		$p(A)=\sum\limits_{w\in A} p(w)$ für $A \subseteq \Omega$ sofern $p=\Omega 
+		\rightarrow$ [1,0] mit $\sum\limits_{w\in\Omega}p(w) = 1$
+	\item[$\blacktriangleright$] $\Omega$ = Alphabet der deutschen Sprache \\
+		$p(w)$ = Wahrscheinlichkeit für das Auftreten der Buchstaben $w$ in einem 
+		Text der deutschen Sprache.
+	\item[$\blacktriangleright$] \quad Fairer Münzwurf:\\
+		$\Omega = \{z,k\} \qquad p(z) = \frac{1}{2} = p(k)$\\
+		Gezinkter Münzwurf:\\
+		$\Omega = \{z,k\} \qquad p(z) \neq \frac{1}{2} \neq p(k)$\\
+		wobei: $p(z) = p$ und $p(k) = 1-p$
+	\item[$\blacktriangleright$] \quad Werfen zweier fairer Würfel:\\
+		$\Omega = S\times S \qquad p(w) = \frac{1}{36}$ für alle $w \in \Omega$ wie 
+		oben.
+\end{description}	
+
+%
+%
+%
+\defi
+Ist $|\Omega| < \infty$ und $p(w) = \frac{1}{|\Omega|}$ für alle $w \in \Omega$, so nennen wir $p$ \underline{Gleichverteilung} auf $\Omega$
+
+%
+%
+%
+
+\stz
+Für Ereignisse $A,B \in $ \suet{A}\normalfont{} gilt stets:
+\begin{enumerate}[a) ]
+	\item $A\cap B \in$ \suet{A}\normalfont{}
+	\item $p(\Omega \diagdown A)=1-p(A)$, insbesondere $p($\O$) = 0$
+	\item ist $A \subseteq B$, so ist $p(A) \leq p(B)$
+	\item $p(A\cup B) = p(A) + p(B) - p(A\cap B)$
+\end{enumerate}
+\qquad \\
+\qquad\\
+%
+%
+%
+
+\bws \\
+\begin{enumerate}[a) ]
+	\item $\Omega\diagdown(A\cap B) \mathop{=}\limits^{\textrm{DE MORGAN}} 
+		(\Omega \diagdown A) \cup (\Omega \diagdown B)$
+	\item $\Omega = A \cup ( \Omega \diagdown A)$ \\
+		$1=p(\Omega) = p(A) + p(\Omega \diagdown A)$
+	\item $B=A\dot{\cup}(B\diagdown A)$ mit $B\diagdown A = B \cap (\Omega 
+		\diagdown A) \in$ \suet{A} \normalfont{}
+	\item $(A\cup B)\diagdown A = B \diagdown (A\cap B)$\\
+		Ansonsten gab es nur Fehler bei dem erläuterungsversuch in dieser Vorlesung.
+\end{enumerate}
